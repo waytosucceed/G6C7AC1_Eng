@@ -1,0 +1,230 @@
+<html>
+    <head> <title>Class Activity 1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+        <link rel="icon" type="image/x-icon" href="Logo_last.png">
+    
+        
+      
+        <style>
+          
+          #storydiv { 
+                height: 100%;
+                position: relative;         
+              }
+                      
+            #storydiv p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            
+            .maindiv{
+                border:5px ridge rgb(12, 96, 206);
+                margin:1%;
+                border-radius:20px
+            }
+
+            p{
+                font-size:30px;
+                font-weight: bold;
+            }
+
+           
+
+            #nextbtn, #backbtn, #newbtn{
+                width: 25%;
+                font-size:20px;
+                margin-right: 5%;
+                position: relative;
+                
+            }
+
+            #backbtn, #newbtn{
+                display:none;
+            }
+
+            #family{
+                width:95%;
+                height:95%;
+            }
+
+            #about{
+                font-weight: bold;
+                font-size:40px;
+                color:rgb(7, 7, 89)
+            }
+
+            #story{ 
+                font-size: 1.28vw;
+                border-radius: 20px;
+            }
+
+            #imgdiv{
+                position:relative;
+            }
+         
+        
+        </style>
+</head>
+
+    <body> 
+        <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+            <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+            <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+        </div>
+         <br>   
+        <br>
+        
+        <center>
+            <h2 id="about">Verbs</h2>
+            <div class="maindiv container-fluid" style="height:60%;">
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11 imgdiv">
+                   <img id="family" src="2.jpg" style="width:100%;"> 
+               </div>
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-11" id='storydiv'>
+                   <p id="story" style="text-align:left; width:100%;"> 
+
+
+
+                    Imagine you're watching a thrilling action movie. The hero is running,
+                    jumping, fighting, and saving the day! <br><br>
+
+
+                    Without those action words, the movie would be pretty boring, right?
+                    Those words that describe the hero's actions are called <span style="color: blue;"> verbs.</span> <br> <br>
+
+                    Verbs are like the superheroes of sentences. They give our language
+                    
+                    power and energy by expressing an action or a state of being. Without
+                    verbs, our sentences would just lie there, lifeless and dull. <br><br>
+
+                    
+
+                    In easy words, a verb is a word that indicates a <span style="font-weight:bolder;"> physical action</span> (eg.
+                    “swim”), a <span style="font-weight: bolder;"> mental action </span> (eg.“think”), or a <span style="font-weight: bolder;"> state of being </span> (eg.“exist”).
+                    
+
+                    
+                </p> 
+            </div>
+        </center>     
+        </div>
+        <br>
+        <div class="" style="text-align:center;">
+            
+            <button id="backbtn" onclick="backpic()" class="btn btn-success">Back</button>
+            <button id="nextbtn" onclick="update()" class="btn btn-success">Continue</button>
+            <button id="newbtn" onclick="newpage()" class="btn btn-success">Next</button>
+            
+        </div>
+            
+
+        </center>   
+
+        <script>
+
+            var images = ["Assets/1.jpg", "Assets/2.jpg", "Assets/3.jpg", "Assets/4.jpg", "Assets/5.jpg", "Assets/6.jpg","Assets/7.jpg","Assets/8.jpg","Assets/9.jpg","Assets/10.jpg","Assets/11.jpg","Assets/12.jpg","Assets/13.jpg","Assets/14.jpg","Assets/15.jpg","Assets/16.jpg"];
+
+            var para=[ "The internet has become an indispensable tool for students in today's digital age. It serves as a vast repository of knowledge, offering access to a wealth of information on virtually any topic imaginable. From research papers to online tutorials, the internet empowers students to acquire knowledge and hone their skills independently.",
+
+                       "The verb ' <span style='color: blueviolet;font-style:italic;'>serves</span>' in this sentence is independent because it stands alone as the main action performed by 'it' (the subject).<br><Br>It is not part of a verb phrase or dependent on another verb; rather, it is the main action verb of the sentence.",
+
+                       "<u> Here are some examples of main verbs:</u><br> <br><span style='color: blue;'>Run </span> <br><span style='background-color: yellow;'>Example</span>: She <span style='font-weight: bolder;'> runs </span> every morning. <br>'Runs' is the verb here because it expresses a complete action on its own. <br><br><span style='color: blue;'>Write </span> <br><span style='background-color: yellow;'>Example </span>: He <span style='font-weight: bolder;'> writes </span> novels in his spare time.<br>'Writes' is the verb, expressing a complete action performed by 'he'.<br><br><span style='color: blue;'>Study</span><br><span style='background-color: yellow;'>Example </span>: They <span style='font-weight: bolder;'> study </span> hard for their exams.<br>'Study' is the verb, describing the action of studying.<br><br>",
+
+                       "One of the primary advantages of the Internet is its ability to facilitate communication and collaboration. Students can connect with peers and educators from around the world, sharing ideas and seeking assistance when needed. Online discussion forums and virtual classrooms have revolutionised the learning experience, transcending physical boundaries.",
+
+                       "Let us understand it in very easy language..... <br><br> A  <span style='color: blue;'> transitive verb </span> is one that requires a direct object to complete its meaning. <br> <br>In this case, the verb  <span style='font-weight:bolder;'> 'facilitate' </span> is followed by the direct objects 'communication' and 'collaboration.'<br> <br> Without these objects, the sentence would lack clarity and leave the reader wondering what exactly is being facilitated.",
+
+                       "The moment you say “<span style='font-weight:bolder;'>The cat chased</span>”, the people listening to you would definitely ask the question, “Chased what?”<br> <br> That explains why ‘<span style='color: blue;'>chased</span>’ can be classified as a transitive verb.<br> <br> Transitive verbs are action-oriented, describing an act that is performed upon something or someone.",
+
+                       "It is a self-contained verb, conveying the idea of overcoming limitations without the need for a direct object. <br> <br> And that is why it is known as “<span style='color: blueviolet;font-style:italic;'>Intransitive verb</span>”.<br><br> Intransitive verbs, unlike their transitive counterparts, do not require a direct object to complete their meaning. They can stand alone, expressing an action or a state of being without the need for a specific recipient.",
+
+                       "Intransitive verbs often describe actions or states that are self-contained or reflect an internal experience. They add depth and nuance to our language, allowing us to express concepts that are not necessarily directed towards a specific object.",
+
+                       "<img src='9th.jpg' style='width: 100%;' alt=''>",
+
+                       "However, it is crucial for students to exercise caution and discernment when navigating the internet. Not all sources are reliable, and it is essential to verify the credibility of information before incorporating it into academic work. Critical thinking skills are paramount in separating fact from fiction in the digital realm. <br><br> Ultimately, the internet is a powerful tool that students must learn to harness responsibly and effectively. By leveraging its vast resources and collaborative potential, students can enhance their academic journey and prepare themselves for success in an increasingly interconnected world.",
+
+                       "If you will notice, there is a word “are” written over here and the fun part is that it is also a verb. <br><br> “Are” in this sentence serves as a helping verb, supporting the main verb 'reliable' by expressing its tense and providing additional context. <br><br> Therefore, the verb “are” will be considered as an “Auxiliary verb”. <br><br> Let’s find out, what exactly is an “<span style='color: blueviolet;font-style:italic;'>Auxiliary verb</span>”. <br><br> An auxiliary verb is a verb that is used as a helping verb along with the main verb in a sentence to make it more meaningful.",
+
+                       "<span style='color: blue;'>Important note:</span> <br><br>● Auxiliary verbs have to be connected to a main verb to make sense. <br> ● It is used to alter the tense, mood or voice of the sentence. <br> ● The three main auxiliary verbs are: be, do, and have.",
+
+                       "Let’s take some examples: <br><br> 1) She is reading a book.<br> <br> Auxiliary Verb: '<span style='color: blueviolet;font-style:italic;'>is</span>' <br> Main Verb: '<span style='color: blueviolet;font-style:italic;'>reading</span>'",
+
+                       "Let’s take some examples:<br><br>2) They have finished their homework. <br><br>Auxiliary Verb: '<span style='color: blueviolet;font-style:italic;'>have</span>' <br>Main Verb: '<span style='color: blueviolet;font-style:italic;'>finished</span>' <br>",
+
+                       "<span style='background-color: yellow;color: blue;'>For example</span>, 'I am reading' (present continuous tense), 'I have read'(present perfect tense), and 'Do you read?'' (question formation). <br><br>Primary auxiliary verbs:  <br><br>● Be (am, is, are, was, were, being, been) <br>● Have (has, had, having) <br>● Do (does, did)",
+
+                       "<span style='background-color: yellow;color: blue;'>Examples</span>: 'I can swim' (ability), 'It may rain' (possibility), 'You must obey' (obligation), 'We should leave early' (advisability). <br><br> Modal auxiliary verbs: <br><br> ● Can, could <br> ● May, might <br> ● Must <br> ● Shall, should <br> ● Will, would  ",
+
+                    ]
+            
+
+
+
+                    var i = -1;
+            function update(){
+                i++
+                document.getElementById("backbtn").style.display="inline-block"
+                if(i > para.length-1){
+                    document.getElementById("nextbtn").style.display="none"
+                    document.getElementById("newbtn").style.display="inline-block"
+                    document.getElementById("family").src = "last.jpg";
+                    document.getElementById("story").style.borderLeftStyle="solid"
+                    document.getElementById("story").style.borderLeftColor="rgb(164, 246, 229)"
+                    document.getElementById("about").innerHTML = "Internet and its Usage";
+                    document.getElementById("story").innerHTML = "<img src='last part.jpg' style='width: 100%;' alt=''>";
+                }
+                else{
+                    document.getElementById("story").style.fontSize="1.25vw"
+                    document.getElementById("story").style.backgroundColor="white"
+                    document.getElementById("about").innerHTML="Internet and its Usage"
+                     var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+              
+            }
+            };
+
+           
+
+            function backpic(){
+                i=i-1
+                console.log(i)
+
+                if(i<0){
+                    document.getElementById("story").style.fontSize="1.25vw"
+                    document.getElementById("backbtn").style.display="none"
+                    document.getElementById("nextbtn").style.display="inline-block"
+                    document.getElementById("family").src = "2.jpg";
+                    document.getElementById("about").innerHTML="Verbs"
+                    document.getElementById("story").innerHTML = "Imagine you're watching a thrilling action movie. The hero is running, jumping, fighting, and saving the day! <br><br> Without those action words, the movie would be pretty boring, right? Those words that describe the hero's actions are called <span style='color: blue;'> verbs.</span> <br> <br> Verbs are like the superheroes of sentences. They give our language power and energy by expressing an action or a state of being. Without verbs, our sentences would just lie there, lifeless and dull. <br><br> In easy words, a verb is a word that indicates a <span style='font-weight:bolder;'> physical action</span> (eg. 'swim'), a <span style='font-weight: bolder;'> mental action </span> (eg.'think'), or a <span style='font-weight: bolder;'> state of being </span> (eg.'exist')."
+
+ }
+                else{
+                document.getElementById("story").style.fontSize="1.25vw"
+                document.getElementById("story").style.backgroundColor="white"
+                document.getElementById("nextbtn").style.display="inline-block"
+                document.getElementById("about").innerHTML="Internet and its Usage"
+                var updated_image = images[i]; 
+                var newpara =para[i];
+                document.getElementById("family").src = updated_image;
+                document.getElementById("story").innerHTML = newpara;
+                }
+            }
+
+    
+    </script>
+        
+    </body>
+</html>
